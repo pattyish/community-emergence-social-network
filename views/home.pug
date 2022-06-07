@@ -1,0 +1,78 @@
+extends base
+
+block content
+    -
+        options = [
+            {
+                title: "View Directory",
+                link: "/view-directory",
+                img: "images/folder.png",
+                class: "cards",
+                display: "block"
+            },
+            {
+                title: "Chat Publicly",
+                link: "/chat-publicly",
+                img: "images/chat.png",
+                class: "cards",
+                display: "block"
+            },
+            {
+                title: "Share Status",
+                link: "/share-status",
+                img: "images/status.png",
+                id: "share-status",
+                display: "block"
+            },
+            {
+                title: "Announcements",
+                link: "/postAnnouncement",
+                img: "images/megaphone.png",
+                id: "announcement",
+                display: "block"
+            },
+            {
+                title: "Update Profiles",
+                link: "/userProfiles",
+                img: "images/edit.png",
+                id: "update-profile",
+                display: "none"
+            },
+            {
+                title: "Read&Support",
+                link: "/read-and-support",
+                img: "images/open-book.png",
+                id: "read-support",
+                display: "block"
+            },
+            {
+                title: "First Aid Volunteer",
+                link: "/volunteer-settings",
+                img: "images/emergency.png",
+                id: "first-aid-volunteer",
+                display: "block"
+            },
+        ]
+
+    div
+    .container
+         
+
+        a#admin-views(href=`${BASE}unapproved-documents` class="btn btn-sm btn-outline-dark position-absolute mt-3" style="display: none;") Unapproved Requests
+
+            span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-danger#number-requests
+
+            span.visually-hidden unread messages
+
+        div(class="text-center p-2")
+            h5(style="font-weight: bold; color: #a1ccd6;") Home
+            div(class="row p-3 justify-content-center")
+                each option in options
+                    .card(id=`${option.id}` style=`width: 13rem; margin: 24px; background-color: #f5f7f7; display: ${option.display}`)
+                        img(class="card-img card-top", src=option.img)
+                        .card-body(class="text-center")
+                            a(href=option.link class="btn btn-outline-secondary")= option.title
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js' type='text/javascript')
+    script(src='js/landing.js' type='text/javascript')
+    //- script(src='/js/isAdmin.js' type='text/javascript')

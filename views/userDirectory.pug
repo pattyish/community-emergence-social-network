@@ -1,0 +1,21 @@
+extends base
+
+block head 
+    link(href='../css/w3.css', rel='stylesheet')
+    script(src="js/protectRoutes.js")
+
+block content
+    div(class="col text-center p-2")
+        h5(style="font-weight: bold; color: #a1ccd6;") Citizen Directory
+        .row
+            div(class="form-inline col-4 mt-3 mx-auto")
+                .input-group.mb-3
+                    input(class="form-control mr-sm-2", type="search", placeholder="Search" aria-label="Search" id="search")
+                    select#searchOption(class="form-select", onchange="filterCards()")
+                        <option value="All" selected>All</option>
+                        <option value="Username">Username</option>
+                        <option value="Status">Status</option>
+    #userCards.row.row-cols-2.row-cols-md-6.g-4.p-4
+
+block js
+    script(src='/js/userDirectory.js', type='text/javascript')

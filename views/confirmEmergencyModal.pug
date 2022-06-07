@@ -1,0 +1,46 @@
+#open-modal.modal-window
+    .text-center(style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);")
+        h1 Request Assistance?
+        div Request will be sent out to other citizens who want to offer help
+        br
+        a.btn.btn-success(onclick="sendPanicRequest()") Accept
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        a.btn.btn-danger(href="#") Cancel
+
+#open-modal-2.modal-window
+    .text-center(style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);")
+        a.modal-close(href="#", title="Close") Close
+        img.loader(src="images/loading.png", style="height: 135px; margin: 12px;")
+        h1 Finding Help <br> Please wait
+        a.btn.btn-outline-danger(href="#") Cancel
+
+#open-modal-3.modal-window(style="background-color: rgba(0, 0, 0, 0.95);")
+    .text-center(style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);")
+        a.modal-close(href="#", title="Close") Close
+        img.blink(src="images/alarm.png", style="height: 135px; margin: 12px;")
+        h1#helpNeededModalText Help Needed!!!
+        #map3(style="height: 150px;")
+        br
+        a#acceptPanicRequestButton.btn.btn-success Accept
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        a.btn.btn-danger(href="#") Decline
+
+#open-modal-4.modal-window(style="background-color: rgba(0, 0, 0, 0.95);")
+    .text-center(style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);")
+        img.scaleImg(src="images/correct.png", style="height: 135px; margin: 12px;")
+        h1#helpAcceptedModalText Great News <br> Help is on the way
+        br
+        a.btn.btn-success(href="#") Okay
+
+#open-modal-5.modal-window(style="background-color: rgba(0, 0, 0, 0.95);")
+    .text-center(style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);")
+        img.scaleImg(src="images/correct.png", style="height: 135px; margin: 12px;")
+        h1 Request accepted
+        br
+        button#showMapButton.btn.btn-success Okay
+
+#open-modal-6.modal-window(style="background-color: rgba(0, 0, 0, 0.95);")
+    .text-center(style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);")
+        #map(style="height: 400px;")
+        br
+        a.btn.btn-success(href="#") Okay

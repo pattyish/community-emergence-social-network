@@ -1,0 +1,19 @@
+extends base
+
+block head 
+    link(href='', rel='stylesheet')
+    script(src="js/protectRoutes.js")
+
+block content
+    div(class="col-12")
+        .container
+            .row.align-items-center(style="margin-top: 2%")
+                 .col-md-2.col-sm-12.col-xs-12
+                 .col-md-8.col-sm-12.col-xs-12 
+                    h3(style="text-align: center; color: #a1ccd6;") 
+                        b
+                            i Check This List in case of emergence and contact one of company
+                    div(class = "row" id="approved-health-service")
+
+block js
+    script(src='js/healthServiceCompanylist.js' type='text/javascript')

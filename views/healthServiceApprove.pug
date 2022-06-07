@@ -1,0 +1,27 @@
+extends base
+
+block head 
+    link(href='../css/w3.css', rel='stylesheet')
+    script(src="js/adminProtectRoute.js")
+
+block content
+    .container-fluid(class="text-center p-2")
+        .row
+            .col-md-12
+                h3(style="text-align: center; color: #a1ccd6;") 
+                    b
+                        i Health Service Companies need to be approved
+                table.table.table-hover
+                    thead
+                        tr
+                            th(scope='col') No
+                            th(scope='col') Comp-Name
+                            th(scope='col') Category
+                            th(scope='col') Location
+                            th(scope='col') Contact
+                            th(scope='col') Action
+                    tbody#health-service-companies-list
+
+block js
+    script(src='js/approvedHealthServiceCompany.js' type='text/javascript')
+    //- script(src='/js/isAdmin.js' type='text/javascript')

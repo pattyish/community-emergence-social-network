@@ -1,0 +1,34 @@
+nav#main-nav(class='navbar navbar-expand-lg sticky-top navbar-light bg-light' style="border-bottom: 1px solid")
+    div(class='container-fluid')
+        if isAuth
+            a(class="navbar-brand text-bold", href="/")
+                strong ESN
+        else
+            a(class="navbar-brand text-bold", href="/home")
+                strong ESN
+        button(class="navbar-toggler", type="button", data-bs-toggle="collapse", data-bs-target="#navbarTogglerDemo02", aria-controls="navbarTogglerDemo02", aria-expanded="false", aria-label="Toggle navigation")
+            span(class="navbar-toggler-icon")
+        div#navbarTogglerDemo02(class="collapse navbar-collapse")
+            ul(class="navbar-nav ms-auto mb-1 mb-lg-0 nav justify-content-end")
+                if !(isAuth)
+                    li(class="nav-item" id="activate-company" style="display: none;")
+                        a(class="nav-link", aria-current="page", href="/companyList" style="color: white; font-weight: bold;") Inactive Company
+                    //- li(class="nav-item")
+                    //-     a(class="nav-link", aria-current="page", href="/approvedCompany" style="color: white; font-weight: bold;")
+                    //-     i.fa-thin.fa-shield-virus
+                    //- li(class="nav-item")
+                    //-     a(class="nav-link", aria-current="page", href="/share-status" style="color: white; font-weight: bold;") Status
+                    //- li(class="nav-item")
+                    //-     a(class="nav-link", aria-current="page", href="/view-directory" style="color: white; font-weight: bold;") Directory
+                    //- li(class="nav-item")
+                    //-     a(class="nav-link", aria-current="page", href="/chat-publicly" style="color: white; font-weight: bold;") Public
+                    //- li(class="nav-item")
+                    //-     a(class="nav-link", aria-current="page", href="/postAnnouncement" style="color: white; font-weight: bold;") Announcement
+                    //- li(class="nav-item")
+                    //-     a(class="nav-link", aria-current="page", href="/read-and-support" style="color: white; font-weight: bold;") Read
+                        
+                    a(class="nav-link active", aria-current="page", href="#", id="logout-btn", style="color: black;font-weight: bold;") Logout
+                if(isHealth)
+                    li(class="nav-item" id="logout-btn")
+                        a(class="nav-link active", aria-current="page", href="#", id="logout-btn", style="font-weight: bold;") Logout
+        script(src='/js/logout.js' type='text/javascript')

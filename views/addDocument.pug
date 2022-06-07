@@ -1,0 +1,29 @@
+extends base
+
+block content
+    div(style="width: 50%; margin-left: 25%; margin-top: 5%")
+        form#add-document-form.w3-container.w3-card-4(action="/upload-file", enctype="multipart/form-data", method="POST")
+            br
+            center
+                h3 
+                    b Adding a new document to help the community.
+            p
+                label.w3-text-grey Topic
+                select.w3-input.w3-border(type='text' id='document-topic' required)
+                    option(value="")
+                    option(value= "Health service") Health service
+            p
+                label.w3-text-grey Description
+                textarea.w3-input.w3-border(style='resize:none' id='document-description' spellcheck='false')
+            p 
+                label.w3-text-grey
+                input.w3-input.w3-border(type="file" accept=".pdf" id="file_to_upload" name = "document" required)
+            br
+            p#feedback
+            p
+                button.w3-btn.w3-padding.w3-right.w3-teal(type='submit' style='width:auto; margin: 30px') Send Request &nbsp; &#x276F;
+
+
+block js
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js' type='text/javascript')
+    script(src='js/addDocument.js' type='text/javascript')

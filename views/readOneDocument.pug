@@ -1,0 +1,32 @@
+extends base
+
+block content
+    div(style="width: 50%; margin-left: 25%; margin-top: 5%; border: solid 2px black")
+        .w3-container.w3-center
+            h3 
+                - const user = data.user
+                b New request from #{data.user.username} 
+                    //- I am going to control about user status. If he has, show it
+                    if user.userstatus
+                        span(class=`w3-text-${user.userstatus.color.toLowerCase()}`) (#{user.userstatus.status})
+                small(class='w3-right') 
+                    a(href=`../chat-private/${user.username}/${user._id}` class='chat') Chat with citizen
+            hr
+            h4
+                b #{data.document.topic}
+            p 
+                i #{data.document.description}
+            br
+            p 
+                a.w3-text-blue(href=`/files/${data.document.document_name}.pdf`, target="_blank") Read and download the document
+            br
+            br
+            input(type="hidden" value=`${data.document._id}` id ='doc_id') 
+            button.w3-button.w3-red(style='margin: 10px', type="button" id='decline-request') Decline
+            button.w3-button.w3-green(style='margin: 10px', type="button", id='accept-request') Accept
+            br
+            br
+
+block js
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js' type='text/javascript')
+    script(src='../js/readOneDocument.js' type='text/javascript')

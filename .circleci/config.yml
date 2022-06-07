@@ -1,0 +1,28 @@
+version: 2.1
+orbs:
+  heroku: circleci/heroku@1.2.5
+  #node: circleci/node@4.7.0
+
+jobs:
+  buildFirst: # job name
+    docker: # Base Image for deployment
+      - image: cimg/node:14.13.0
+    steps: # step or commands that has to run in the Job
+      - checkout
+      - run:
+          name: install dependencies
+          command: "node --version  && npm install"
+      - run:
+          name: run test
+          command: "npm run test"
+    environment:
+      SECRET_KEY: XXJ1c2VybmFtZSI6Im1yb2JlcnQiLCJXX
+
+  # pipeline workflows
+workflows:
+  ESN-App-Deploy: #work flow name
+    jobs:
+      - buildFirst:
+        filters:
+          branches:
+            only: main

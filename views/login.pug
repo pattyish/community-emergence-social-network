@@ -1,0 +1,29 @@
+extends base
+
+block head
+    //- link(href='css/login.css', rel='stylesheet')
+
+block content
+    div
+                .container
+                    .row.align-items-center.justify-content-center
+                        .col-md-7
+                            .mb-4
+                            div(class="input-group-sm mt-3")
+                                h1(style="font-weight: bold") Welcome to ESN,
+                                small -> login or create account
+                            form(class='login-form mt-4')
+                                small#usr
+                                .form-group.first.mb-3
+                                    input#username(style="background: transparent; border: 1px solid black; color: black" class="form-control" type="text" placeholder="username" aria-label=".form-control-sm example")
+                                small#psw
+                                .form-group.last.mb-3
+                                    input#password(style="background: transparent; border: 1px solid black; color: black" class="form-control" type="password" placeholder="password" aria-label=".form-control-sm example")
+                                p#feedback
+                                div(style="width: 190px")
+                                    span#feedback
+                                    input#submit-btn.btn.btn-block.btn-primary(type='submit' value='Join the community')
+
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js' type='text/javascript')
+    script(src='js/login.js' type='text/javascript')

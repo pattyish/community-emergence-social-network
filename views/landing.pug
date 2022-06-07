@@ -1,0 +1,20 @@
+extends base
+
+block head
+    link(href='css/landing.css', rel='stylesheet')
+
+block content
+    div
+    .h-100.row.align-items-center
+        .col-9.col-md-6
+            img(src="images/family-bad-gateway-1.png")
+        .col-9.p-3.col-md-6.mb-3
+            h1(style="font-weight: bold") Carnegie Mellon University Emergency Social Network
+            h5(style="font-weight: bold") A Social Network you can rely on when it matters most.
+            h6 Join now to join a community designed to help each other during emergencies
+            a(class='btn btn-outline-Dark btn-lg', href='/login') Join Community
+            | &nbsp;
+            a(class='btn btn-outline-Dark btn-lg', href='/registerCompany') Company Sign-up
+            | &nbsp;
+            a(class='btn btn-outline-Dark btn-lg', href='/loginCompany') Company Sign-in
+        

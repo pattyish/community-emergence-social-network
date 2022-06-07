@@ -1,0 +1,32 @@
+extends base
+
+block head
+    link(href='css/landing.css', rel='stylesheet')
+
+block content
+    img#bg(src="images/background1.jpg", style="")
+    .container
+        .row.align-items-center(style="margin-top: 2%")
+            .col-md-3.col-sm-12.col-xs-12
+            .col-md-6.col-sm-12.col-xs-12(style="background-color: FFFFFF; padding: 2%;")
+                div(style="text-align: center")
+                    img(src="images/user.png", style="width: 100px; height: 100px;" )
+                h3(style="text-align: center") Login to Access your Account
+                div(id="display-message")
+                form(class="company-login-form")
+                    span(id="message" style="display: none; text-align: center; color: red;") 
+                    .form-group
+                        label(for='email') User-name
+                        input#username.form-control(type='text' aria-describedby='emailHelp' placeholder='Enter email')
+                    .form-group
+                        label(for='password') Password
+                        input#password.form-control(type='password' placeholder='Password')
+                    .form-group.form-check
+                    div(style="text-align: center")
+                        button.btn.btn-primary(type='submit') Sign-in
+                        br
+                        |If you don't have account, 
+                        a(href='/registerCompany') Register
+
+block js
+    script(src='js/loginCompany.js' type='text/javascript')

@@ -1,0 +1,23 @@
+extends base
+
+block head
+    script(src="js/protectRoutes.js")
+
+block content
+    div(class="col text-center p-5")
+        h1(style="color: #a1ccd6;") First Aid Volunteer
+        .row
+            div(class="form-inline col-12 col-md-8 col-lg-4 mt-2 mx-auto")
+                | Receive requests
+                br
+                label.switch
+                    input#enableRequests(type="checkbox")
+                    span.slider.round
+                br
+                | Search and select a location below
+                #map2(style="height: 300px; width: 100%;")
+                br
+                button.btn.btn-primary(onclick='updateVolunteerSettings()') Update
+
+block js
+    script(src='/js/volunteerSettings.js', type='text/javascript')

@@ -1,0 +1,44 @@
+extends base
+
+block head 
+    link(href='', rel='stylesheet')
+    script(type='text/javascript').
+        const token_ = localStorage.getItem("CC_Token_Company");
+        if (!token_) {
+        window.location.href = `/loginCompany`;
+        }
+
+block content
+    div(class="col-12")
+        .container
+            .row.align-items-center(style="margin-top: 1%")
+                .col-md-3.col-sm-12.col-xs-12
+                .col-md-6.col-sm-12.col-xs-12(style="background-color: FFFFFF; padding: 2%;")
+                    h3(style="text-align: center; color: #a1ccd6;") Update Company profile Information
+                    div(id="display-message")
+                    form(class="company-profile-form")
+                        span(id="message" style="display: none; text-align: center; color: red;")
+                        input(type="text" id="company-id" hidden)
+                        .form-group
+                            label(for='Company-name') Name
+                            input#name.form-control(type='text' aria-describedby='emailHelp' placeholder='Enter Company-Name...')
+                        .form-group
+                            label(for='company-location') Location
+                            input#location.form-control(type='text' aria-describedby='emailHelp' placeholder='Enter Location...')              
+                        .form-group
+                            label(for='contact') Contact
+                            input#contact.form-control(type='text' aria-describedby='emailHelp' placeholder='Enter Contact...')
+                        .form-group
+                            label(for='company-category') Company-Category
+                            select#category.form-control
+                                option(value="0") Select Category
+                                option(value='ambulance') Ambulance
+                                option(value='firefighter') Firefighter
+                                option(value='Pharmaceutical') Pharmaceutical      
+                        div
+                            button.btn.btn-primary(type='submit') Save Changes
+    
+
+block js
+    script(src='/js/updateProfile.js', type='text/javascript')
+    script(src='/js/logoutComp.js' type='text/javascript')

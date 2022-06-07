@@ -1,0 +1,23 @@
+extends base
+
+//- block head 
+
+block content
+    center
+        div(style='margin:0 -16px 0 -16px;')
+            .w3-container
+                h2(style="color: #a1ccd6;") Choose your current status
+                p Based your current situation, change your status to let people know how well or bad you are.
+                .w3-card-4(style='width:50%; min-width:400px;')
+                    header.w3-container.w3-sand
+                        h1 Status
+                    .w3-container
+                    form#status-form
+                        table#status-table( cellspacing="10", cellpadding= "10", style="margin: 20px")
+                    .w3-container.w3-sand 
+                        h5 &nbsp;&nbsp;&nbsp;
+                            span#feedback-status(style="color:tomato")
+
+block js
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js' type='text/javascript')
+    script(src='../js/allStatuses.js' type='text/javascript')

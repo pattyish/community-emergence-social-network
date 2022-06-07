@@ -1,0 +1,31 @@
+extends base
+
+block content
+    .row(style="height: 80%;")
+        .container(style="height: 90%;")
+            .text-center
+                h5(style="font-weight: bold; color: #a1ccd6;") Announcements
+            include toast
+            div(class="form-inline col-4 mx-auto")
+                .input-group.mb-3
+                    input(class="form-control mr-sm-2", type="search", placeholder="Search" aria-label="Search" id="search")
+                    select#searchOption(class="form-select")
+                        <option value="All" selected>All</option>
+                        <option value="Content">Content</option>
+                        <option value="Username">Username</option>
+                        <option value="Status">Status</option>
+                        <option value="Date">Date</option>
+                    button.btn.btn-secondary(onclick="filterAnnouncements()") Search ❯
+            .row(style="max-height: 68%; overflow: auto;")
+                .col-1.col-md-3
+                .col-10.col-md-6#announcementList
+                .col-1.col-md-3
+        .row.m-auto.text-center.align-items-center#post-announcement-area(style="height: 5%;")
+            .input-group(style="max-width: 600px; min-width: 150px; margin: auto;")
+                textarea#announcementText(class="form-control" name="announcementText" rows="3", placeholder="Enter text here...")
+                button(class="btn btn-outline-secondary p-4", onclick="submitAnnouncement()")
+                    span#postButtonSpinner(class="spinner-border spinner-border-sm", role="status" aria-hidden="true", style="display: none;")
+                    span   Post
+
+block js
+    script(src='js/announcement.js' type='text/javascript')

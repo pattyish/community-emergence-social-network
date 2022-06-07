@@ -1,0 +1,22 @@
+extends base
+
+block head 
+    link(href='css/welcome.css', rel='stylesheet')
+
+block content 
+    div.w3-container 
+        p.w3-container.w3-card
+            h5 Welcome to ESN, This is a support system to support you whenever you need an emergency help. With this system you can
+            h5 communcate with everyone in your community either privately or publicaly.
+            h5 You can also share ypur status with the community to allow people know which condition you are currently in. Here are 
+            h5 the known status you can choose from 
+            br
+            ol 
+                li Status "OK" means You are OK, and you do not need any help in that moment 
+                li Status  "Help" means that you need help but it is not a scary condition.
+                li Status "Emergency" means that you really need help, and you are currently in a threatening emergency condition.
+                li Status "Undefined" means you do not want to show your current status.
+        button#next-page.w3-btn.w3-blue.w3-center Next
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js' type='text/javascript')
+    script(src='js/welcome.js' type='text/javascript')

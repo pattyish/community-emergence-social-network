@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Socket io</title>
+</head>
+<div>
+    <h1>Chat Application</h1>
+</div>
+<div>
+    <h6 id="name"></h6>
+    <p id="message">
+    </p>
+</div>
+
+<body>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+        integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+        crossorigin="anonymous"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script>
+        localStorage.setItem("CC_Token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIwYjc5NjI0ZWFhNjA4YjFhNjA3Y2U2IiwidXNlcm5hbWUiOiJtcm9iZXJ0IiwicGFzc3dvcmQiOiIkMmEkMDgkNWxNRDhmSDlnM01aZXFQNU55QUY5T1QuSDNnRm9LNS80Qngwb1RvLlI1ZlpkNTNKQnVhREciLCJpYXQiOjE2NDUxMDkzMDEsImV4cCI6MTY0NTE5NTcwMX0.iLzoexnh0fl0Up1PoI_EzjTPFVzvpwjgzAsnVPNXTR8")
+        const socket = io.connect("http://localhost:8080", {
+            transports: ["websocket"],
+            query: {
+                token: localStorage.getItem("CC_Token"),
+            }
+        });
+        socket.on("chatPublic", (playload) => {
+            console.log(`Chat message have reached out with ${playload.name} and ${playload.message}`);
+            document.getElementById("name").innerHTML = playload.name;
+            document.getElementById("message").innerHTML = playload.message;
+        });
+        socket.emit("chatroomPost", { sender_id: 12222, name: "Patrick Ishimwe", content: "This is start of the semester" });
+    </script>
+</body>
+
+</html>
