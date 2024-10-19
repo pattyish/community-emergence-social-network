@@ -16,7 +16,7 @@ class EmailService {
         }));
 
         var mailOptions = {
-            from: 'bmahatchi@gmail.com',
+            from: '',
             to: recipient,
             subject: subject,
             text: text,
