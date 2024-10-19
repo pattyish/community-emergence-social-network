@@ -7,8 +7,8 @@ class EmailService {
             service: 'gmail',
             host: 'smtp.gmail.com',
             auth: {
-                user: 'bmahatchi@gmail.com',
-                pass: 'nxppfahgzrcspvql',
+                user: '',
+                pass: '',
             },
             tls: {
                 rejectUnauthorized: false
